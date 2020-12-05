@@ -4,15 +4,15 @@ class Player
     # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
     puts "数字を入力してください。"
     puts "0:グー, 1:チョキ, 2:パー"
-    input_hand = gets.to_i
     while true
-      if input_hand == 0 || input_hand == 1 || input_hand == 2
+      input_hand = gets.chomp
+      if input_hand == "0" || input_hand == "1" || input_hand == "2"
+        input_hand = input_hand.to_i
         return input_hand
       else
         puts "もう一度数字を入力してください。"
         puts "0:グー, 1:チョキ, 2:パー"
-        input_hand = gets.chomp
-        return input_hand
+        # input_hand = gets.chomp
       end
     end
     # 変数「input_hand」にプレイヤーが入力したものを取得して代入します。
